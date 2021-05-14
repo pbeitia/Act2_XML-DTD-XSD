@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    
+    <libros>
+        
+        <libro1 id="L0001" tipo_clase="Novela">
+            <tituloL>titulo1</tituloL>
+            <capitulos>
+                <capitulo >titulo_capitulo1</capitulo>
+                <capitulo >titulo_capitulo2</capitulo>
+                <capitulo >titulo_capitulo3</capitulo>
+            </capitulos>
+            <indice></indice>
+            <sinopsis></sinopsis>
+        </libro1>
+       
+
+        <libro2 id="L0002" tipo_clase="infantil">
+            <tituloL>titulo2</tituloL>
+            <capitulos>
+                <capitulo >titulo_capitulo1</capitulo>
+                <capitulo >titulo_capitulo2</capitulo>
+                <capitulo >titulo_capitulo3</capitulo>
+            </capitulos>
+            <indice></indice>
+            <sinopsis></sinopsis>
+        </libro2>
+        <libro3 id="L0003" tipo_clase="Didadctico">
+            <tituloL>titulo3</tituloL>
+            <capitulos>
+                <capitulo >titulo_capitulo1</capitulo>
+                <capitulo >titulo_capitulo2</capitulo>
+                <capitulo >titulo_capitulo3</capitulo>
+            </capitulos>
+            <indice></indice>
+            <sinopsis></sinopsis>
+        </libro3>
+    </libros>
+
+    <revistas>
+        
+        <revista1 id="R0001" tipo_clase="informática" numero_paginas="23">
+            <tituloR>titulo1</tituloR>
+            <número_de_revista></número_de_revista>
+            <indice_de_contenido></indice_de_contenido>
+            <seccionesR>
+                <seccion1R numero_paginas="10">titulo_seccion1</seccion1R>
+                <seccion2R numero_paginas="10">titulo_seccion2</seccion2R>
+                <seccion3R numero_paginas="3">titulo_seccion3</seccion3R>
+            </seccionesR>
+        </revista1>
+       
+
+    </revistas>
+    
+
+    <periodicos>
+        
+        <periodico1 id="P0001" tipo_clase="nacional" fecha="21/08/2017">
+            <indice></indice>
+            <seccionesP>
+                <seccion1P tipo="economia">titulo1</seccion1P>
+                    <articulos autor="felipe">contenido</articulos>
+                <seccion2P tipo="opinion">titulo2</seccion2P>
+                <seccion3P tipo="deportes">titulo3</seccion3P>
+                <seccion4P tipo="nacional">titulo4</seccion4P>
+                <seccion5P tipo="internacional">titulo5</seccion5P>
+            </seccionesP>
+        </periodico1>
+       
+
+    </periodicos>
+</biblioteca>
