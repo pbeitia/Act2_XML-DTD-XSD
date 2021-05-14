@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+    <annotation>
+        <documentation>
+            Esquema de la estructura de un libro de la biblioteca de la actividad 2
+         </documentation>
+    </annotation>
+
+    <!-- Nodo raiz: Biblioteca-->
+    <element name="Biblioteca">
+        <complexType>
+            <sequence>
+                
+                <!--Elemento libro-->
+                <element name="libro">
+                    <complexType>
+                        <sequence>
+                            <element name="Titulo" type="string" />
+                            <element name="Capitulo" minOccurs="1" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="Titulo" type="string"></element>
+                                        <element name="Indice" type="string"></element>
+                                        <element name="Sinopsis" type="string"></element>
+                                        <element name="Contenido">
+                                            <complexType>
+                                                <attribute name="valor" use="required"></attribute>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                    <attribute name="numeroPaginas" type="integer"></attribute>
+                                </complexType>
+                            </element>
+
+                        </sequence>
+
+                        <!--Atributos de libro: id, categoría y numeroPaginas -->
+                        <attribute name="id" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[L][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+
+                        <attribute name="tipo_clase" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="novela"></enumeration>
+                                    <enumeration value="infantil"></enumeration>
+                                    <enumeration value="didactico"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+
+                        <attribute name="numeroPaginas" type="integer"></attribute>
+
+                    </complexType>
+                </element>
+
+                <!--Elemento periódico-->
+                <element name="periodico">
+                    <complexType>
+                        <sequence>
+                            <element name="Indice" type="string"></element>
+                            <element name="Seccion" minOccurs="1" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="Articulo" minOccurs="1" maxOccurs="unbounded">
+                                            <complexType>
+                                                <attribute name="Autor" type="string"></attribute>
+                                            </complexType>
+                                        </element>
+            
+                                    </sequence>
+            
+                                    <attribute name="tipoSeccion">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="economica"></enumeration>
+                                                <enumeration value="opinion"></enumeration>
+                                                <enumeration value="deportes"></enumeration>
+                                                <enumeration value="nacional"></enumeration>
+                                                <enumeration value="internacional"></enumeration>
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>   
+                                </complexType>
+                            </element>
+
+                            <element name="Contenido">
+                            <complexType>
+                            <attribute name="valor" use="required"></attribute>
+                            </complexType>
+                            </element>
+                            
+                        </sequence>
+            
+                        <!--Atributos de periodico: id, categoría y numeroPaginas -->
+                        <attribute name="id" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[P][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+            
+                        <attribute name="tipo_clase">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="nacional"></enumeration>
+                                    <enumeration value="internacional"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+            
+                        <attribute name="fechaPublicacion" type="date"></attribute>
+            
+                    </complexType>
+                </element>
+
+                <!--Elemento revista-->
+                <element name="revista">
+                    <complexType>
+                        <sequence>
+                            <element name="titulo" type="string"></element>
+                            <element name="numero_revista" type="string"></element>
+                            <element name="indice" type="string"></element>
+                            <element name="seccion" minOccurs="1" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="Contenido">
+                                            <complexType>
+                                                <attribute name="valor" use="required"></attribute>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="Contenido">
+                            <complexType>
+                            <attribute name="valor" use="required"></attribute>
+                            </complexType>
+                            </element>
+                            
+                        </sequence>
+            
+                        <!--Atributos de periodico: id, categoría y numeroPaginas -->
+                        <attribute name="id" use="required">
+                            <simpleType>
+                                <restriction base="string">
+                                    <pattern value="[R][0-9]{4}"></pattern>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+            
+                        <attribute name="tipo_clase">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="informatica"></enumeration>
+                                    <enumeration value="corazon"></enumeration>
+                                    <enumeration value="coches"></enumeration>
+                                    <enumeration value="investigacion"></enumeration>
+                                    <enumeration value="otras"></enumeration>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+            
+                        <attribute name="fechaPublicacion" type="date"></attribute>
+            
+                    </complexType>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
