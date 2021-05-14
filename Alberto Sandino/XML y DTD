@@ -1,0 +1,82 @@
+<?xml version=”1.0” encoding=”UTF-8”?>
+
+<!ELEMENT Biblioteca (Libros | Revistas | Periodicos)>
+
+<!ELEMENT Libros (Capitulo)>
+<!ATTLIST Libros
+  Didactico CDATA #REQUIRED
+  Infantil CDATA #REQUIRED
+  Novela CDATA #REQUIRED
+  Paginas_libro CDATA #REQUIRED
+  Tipo_clase CDATA #REQUIRED
+  id_L CDATA #REQUIRED>
+
+<!ELEMENT Revistas (Indice)>
+<!ATTLIST Revistas
+  Coches CDATA #REQUIRED
+  Corazon CDATA #REQUIRED
+  Id_R CDATA #REQUIRED
+  Informatica CDATA #REQUIRED
+  Investigacion CDATA #REQUIRED
+  Numero_Revista CDATA #REQUIRED
+  Otras CDATA #REQUIRED
+  Paginas_revista CDATA #REQUIRED
+  Tipo_clase CDATA #REQUIRED
+  Titulo_revista CDATA #REQUIRED>
+
+<!ELEMENT Periodicos (Indice)>
+<!ATTLIST Periodicos
+  Fecha_publicacion CDATA #REQUIRED
+  Id_P CDATA #REQUIRED
+  Internacional CDATA #REQUIRED
+  Nacional CDATA #REQUIRED
+  Tipo_clase CDATA #REQUIRED>
+
+<!ELEMENT Capitulo (Contenido)>
+<!ATTLIST Capitulo
+  Paginas_capitulo CDATA #REQUIRED>
+
+<!ELEMENT Contenido #PCDATA>
+<!ATTLIST Contenido
+  Enlace_info CDATA #REQUIRED>
+
+<!ELEMENT Indice (Secciones, Contenido)>
+<!ATTLIST Indice EMPTY>
+
+<!ELEMENT Secciones (Articulos, Contenido)>
+<!ATTLIST Secciones
+  Deportes CDATA #IMPLIED
+  Economica CDATA #IMPLIED
+  Id_seccion CDATA #IMPLIED
+  Internacional CDATA #IMPLIED
+  Nacional CDATA #IMPLIED
+  Opinion CDATA #IMPLIED
+  Paginas_seccion CDATA #IMPLIED>
+
+<!ELEMENT Articulos #PCDATA>
+<!ATTLIST Articulos
+  Autor CDATA #REQUIRED>
+
+
+<Biblioteca>
+<Libros id_L="" Tipo_clase="" Novela="" Infantil="" Didactico="" Paginas_libro="">
+<Capitulo Paginas_capitulo="">
+ <Contenido Enlace_info=""/>
+ </Capitulo>
+ </Libros>
+<Revistas Id_R="" Tipo_clase="" Informatica="" Corazon="" Coches="" Investigacion="" Otras="" Titulo_revista="" Numero_Revista="" Paginas_revista="">
+<Indice>
+<Secciones Paginas_seccion="">
+ <Contenido Enlace_info=""/>
+ </Secciones>
+ </Indice>
+ </Revistas>
+<Periodicos Id_P="" Tipo_clase="" Nacional="" Internacional="" Fecha_publicacion="">
+<Indice>
+<Secciones Id_seccion="" Economica="" Opinion="" Deportes="" Nacional="" Internacional="">
+ <Articulos Autor=""/>
+ <Contenido Enlace_info=""/>
+ </Secciones>
+ </Indice>
+ </Periodicos>
+ </Biblioteca>
