@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE biblioteca[
+    <!ELEMENT biblioteca (libros*,revistas*,periodicos*)>
+
+ <!--Libro-->
+    <!ELEMENT libros (tituloL,indice,sinopsis,capitulos+)>
+    <!ELEMENT tituloL (#PCDATA)>
+    <!ELEMENT indice (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+    <!ELEMENT capitulos (titulo_cap,contenidoL)>
+    <!ELEMENT titulo_cap (#PCDATA)>
+    <!ELEMENT contenidoL (#PCDATA)>
+   
+  
+
+    <!ATTLIST libros id CDATA #REQUIRED>
+    <!ATTLIST libros tipo_clase CDATA #REQUIRED>
+    <!ATTLIST libros numero_paginas_libro NMTOKENS #REQUIRED>
+    <!ATTLIST capitulos numero_paginas_cap NMTOKENS #REQUIRED>
+    <!ATTLIST contenidoL enlaceL CDATA #REQUIRED>
+
+ <!--Revista-->
+
+    <!ELEMENT revista (tituloR,numero_de_revista,indiceR,seccionesR+)>
+    <!ELEMENT tituloR (#PCDATA)>
+    <!ELEMENT numero_de_revista (#PCDATA)>
+    <!ELEMENT indiceR (#PCDATA)>
+    <!ELEMENT seccionesR (contenidoR)>
+    <!ELEMENT contenidoR (#PCDATA)>
+
+    <!ATTLIST revista id CDATA #REQUIRED>
+    <!ATTLIST revista tipo_clase (informatica | corazon | investigacion | otras) CDATA #REQUIRED>
+    <!ATTLIST revista numero_paginas NMTOKENS  #REQUIRED>
+    <!ATTLIST seccionesR numero_paginas NMTOKENS  #REQUIRED>
+    <!ATTLIST contenidoR enlaceR CDATA #REQUIRED>
+
+
+ <!--Periodico-->
+
+    <!ELEMENT periodicos (indiceP,seccionesP+,articulo,contenido)>
+    <!ELEMENT indiceP (#PCDATA)>
+    <!ELEMENT seccionesP (articulo)>
+    <!ELEMENT articulo (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
+   
+
+    <!ATTLIST periodico id ID #REQUIRED>
+    <!ATTLIST periodico tipo_clase (nacionales | internacionales) CDATA #REQUIRED>
+    <!ATTLIST periodico fecha NMTOKENS  #REQUIRED>
+    <!ATTLIST seccionesP tipo (economica | opinion | deportes | nacional | internacional) CDATA #REQUIRED>
+    <!ATTLIST articulos autor CDATA #REQUIRED>
+    <!ATTLIST contenido enlaceP CDATA #REQUIRED>
+
+]>
+
+
+<biblioteca>
+    <libros id="L0001" tipo_clase="Novela" numero_paginas_libro="120">
+        <tituloL>titulo</tituloL>
+        <indice>indice</indice>
+        <sinopsis>sinopsis</sinopsis>
+        <capitulos numero_paginas_cap="20">
+            <titulo_cap>Cap 1</titulo_cap>
+            <contenidoL enlaceL="enlace">Contenido</contenidoL>
+        </capitulos>
+
+    </libros>
+    <revista id="R0002" tipo_clase="informática" numero_paginas="23">
+        <tituloR>titulo</tituloR>
+        <numero_de_revista>12</numero_de_revista>
+        <indice>indice</indice>
+        <seccionesR numero_paginas="10">
+            <contenidoR enlaceR="enlace">contenido</contenidoR>
+        </seccionesR>
+
+    </revista>
+
+    <periodico id="P0003" tipo_clase="nacionales" fecha_publicacion="16-08-2015">
+        <indiceP>indice</indiceP>
+        <seccionesP tipo_clase=" nacionales">
+            <articulos autor="jaime hebrero">articulo</articulos>
+        </seccionesP>
+        <Contenido enlaceP="enlace">Contenido</Contenido>
+    </periodico>
+
+
+
+</biblioteca>
