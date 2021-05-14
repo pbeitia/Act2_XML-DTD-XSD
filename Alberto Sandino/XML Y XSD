@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Biblioteca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Libros"/>
+        <xs:element ref="Revistas"/>
+        <xs:element ref="Periodicos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Libros" type="string">
+    <xs:oomplexType>
+      <xs:sequence>
+        <xs:element ref="Capitulo"/>
+      </xs:sequence>
+      <xs:attribute name="Didactico" type="xs:boolean" use="required"/>
+      <xs:attribute name="Infantil" type="xs:boolean" use="required"/>
+      <xs:attribute name="Novela" type="xs:boolean" use="required"/>
+      <xs:attribute name="Paginas_libro" type="xs:integer" use="required"/>
+      <xs:attribute name="Tipo_clase" type="xs:string" use="required"/>
+      <xs:attribute name="id_L" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Capitulo" type="string">
+    <xs:simpleType>
+      <xs:sequence>
+        <xs:element ref="Contenido"/>
+      </xs:sequence>
+      <xs:attribute name="Paginas_capitulo" type="xs:integer" use="required"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Revistas" type="string">
+    <xs:simpleType>
+        <xs:extension base="Indice">
+          <xs:attribute name="Coches" type="xs:boolean" use="required"/>
+          <xs:attribute name="Corazon" type="xs:boolean" use="required"/>          
+          <xs:attribute name="Informatica" type="xs:boolean" use="required"/>
+          <xs:attribute name="Investigacion" type="xs:boolean" use="required"/>
+          <xs:attribute name="Otras" type="xs:boolean" use="required"/>
+          <xs:attribute name="Id_R" type="xs:string" use="required"/>
+          <xs:attribute name="Numero_Revista" type="xs:integer" use="required"/>
+          <xs:attribute name="Paginas_revista" type="xs:integer" use="required"/>
+          <xs:attribute name="Tipo_clase" type="xs:string" use="required"/>
+          <xs:attribute name="Titulo_revista" type="xs:string" use="required"/>
+        </xs:extension>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Periodicos" type="string">
+    <xs:simpleType>
+        <xs:extension base="Indice">
+          <xs:attribute name="Fecha_publicacion" type="xs:date" use="required"/>
+          <xs:attribute name="Id_P" type="xs:string" use="required"/>
+          <xs:attribute name="Internacional" type="xs:boolean" use="required"/>
+          <xs:attribute name="Nacional" type="xs:boolean" use="required"/>
+          <xs:attribute name="Tipo_clase" type="xs:string"use="required"/>
+        </xs:extension>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Contenido">
+    <xs:complexType>
+      <xs:attribute name="Enlace_info" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="Indice" type="String">
+    <xs:sequence>
+      <xs:element ref="Indice"/>
+    </xs:sequence>
+  </xs:simpleType>
+  <xs:element name="Indice" type="String">
+    <xs:simpleType>
+      <xs:sequence>
+        <xs:element ref="Secciones"/>
+      </xs:sequence>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Secciones" type="string">
+    <xs:simpleType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Articulos"/>
+        <xs:element ref="Contenido"/>
+      </xs:sequence>
+      <xs:attribute name="Deportes" type="xs:boolean" use="required"/>
+      <xs:attribute name="Economica" type="xs:boolean" use="required"/>
+      <xs:attribute name="Id_seccion"  type="xs:string" use="required"/>
+      <xs:attribute name="Internacional" type="xs:boolean" use="required"/>
+      <xs:attribute name="Nacional" type="xs:boolean" use="required"/>
+      <xs:attribute name="Opinion" type="xs:boolean" use="required"/>
+      <xs:attribute name="Paginas_seccion" type="xs:integer" use="required"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Articulos" type="string">
+    <xs:simpleType>
+      <xs:attribute name="Autor" type="xs:string" use="required"/>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
+
+
+<Biblioteca>
+<Libros id_L="" Tipo_clase="" Novela="" Infantil="" Didactico="" Paginas_libro="">
+<Capitulo Paginas_capitulo="">
+ <Contenido Enlace_info=""/>
+ </Capitulo>
+ </Libros>
+<Revistas Id_R="" Tipo_clase="" Informatica="" Corazon="" Coches="" Investigacion="" Otras="" Titulo_revista="" Numero_Revista="" Paginas_revista="">
+<Indice>
+<Secciones Paginas_seccion="">
+ <Contenido Enlace_info=""/>
+ </Secciones>
+ </Indice>
+ </Revistas>
+<Periodicos Id_P="" Tipo_clase="" Nacional="" Internacional="" Fecha_publicacion="">
+<Indice>
+<Secciones Id_seccion="" Economica="" Opinion="" Deportes="" Nacional="" Internacional="">
+ <Articulos Autor=""/>
+ <Contenido Enlace_info=""/>
+ </Secciones>
+ </Indice>
+ </Periodicos>
+ </Biblioteca>
