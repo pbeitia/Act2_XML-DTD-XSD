@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<biblioteca>
+        <libro id="L0040" tipo_clase="novela" numeroPaginas="1200" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:noNamespaceSchemaLocation= "Biblioteca.xsd">
+            <Titulo>Don Quijote</Titulo>
+            <Capitulo numeroPaginas="35">
+                    <Titulo>Introducción</Titulo>
+                    <Indice>1</Indice>
+                    <Sinopsis>En un lugar de la Mancha, de cuyo nombre no quiero acordarme</Sinopsis>
+                    <Contenido valor="www.google.es" />
+            </Capitulo>
+
+            <Capitulo numeroPaginas="95">
+                    <Titulo>Don Quijote</Titulo>
+                    <Indice>2</Indice>
+                    <Sinopsis>no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.</Sinopsis>
+                    <Contenido valor="www.google.es" />
+            </Capitulo>
+    </libro>
+
+    <periodico id="P0091" tipo_clase="nacional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:noNamespaceSchemaLocation= "Biblioteca.xsd">
+            <Indice>2</Indice>
+            <Seccion tipoSeccion="nacional">
+                <Articulo Autor="Federico García Lorca"/>    
+            </Seccion>
+
+            <Seccion tipoSeccion="deportes">
+                    <Articulo Autor="Fernando Torres"/>    
+            </Seccion>
+            
+            <Contenido valor="www.federicogarcialorca.es" />
+
+    </periodico>
+
+    <revista id="R1997" tipo_clase="informatica" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:noNamespaceSchemaLocation= "Biblioteca.xsd">
+            <titulo>Computer hoy</titulo>
+            <numero_revista>500</numero_revista>
+            <indice>2</indice>
+            <seccion>
+                    <Contenido valor="https://computerhoy.com/entretenimiento" />
+            </seccion>
+            <seccion>
+                    <Contenido valor="https://computerhoy.com/gaming" />
+            </seccion>
+            <Contenido valor="https://computerhoy.com/" />
+    </revista>
+
+
+</biblioteca>
