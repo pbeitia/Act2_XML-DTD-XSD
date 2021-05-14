@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE biblioteca[
+    <!ELEMENT biblioteca (libro, revista, periodico)>
+
+    <!--Parte del libro-->
+    <!ELEMENT libro (titulo_libro, indice_contenido, sinopsis, capitulo)>
+    <!ELEMENT titulo_libro (#PCDATA)>
+    <!ELEMENT indice_contenido (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+    <!ELEMENT capitulo (#PCDATA)>
+    <!ELEMENT contenido_libro (#PCDATA)>
+    <!ELEMENT titulo_cap (#PCDATA)>
+
+    <!ATTLIST libro id ID #REQUIRED>
+    <!ATTLIST libro tipo_clase (novela | infantil | didactico) #REQUIRED>
+    <!ATTLIST libro numero_paginas_libro NMTOKENS #REQUIRED>
+    <!ATTLIST capitulo numero_paginas_cap NMTOKENS #REQUIRED>
+    <!ATTLIST contenido_libro enlace CDATA #REQUIRED>
+
+    <!--Parte de la revista-->
+    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, seccion)>
+    <!ELEMENT titulo_revista (#PCDATA)>
+    <!ELEMENT numero_revista (#PCDATA)>
+    <!ELEMENT indice_revista (#PCDATA)>
+    <!ELEMENT seccion_revista (#PCDATA)>
+    <!ELEMENT contenido_seccion (#PCDATA)>
+    
+    <!ATTLIST revista id ID #REQUIRED>
+    <!ATTLIST revista tipo_clase (informatica | corazon | investigacion | otras) #REQUIRED>
+    <!ATTLIST revista numero_paginas_revista NMTOKENS #REQUIRED>
+    <!ATTLIST seccion_revista numero_paginas_seccion NMTOKENS #REQUIRED>
+    <!ATTLIST contenido_seccion enlace_info_revista CDATA #REQUIRED>
+
+    <!--Parte del periodico-->
+    <!ELEMENT periodico (indice_periodico, seccion_periodico, contenido)>
+    <!ELEMENT indice_periodico (#PCDATA)>
+    <!ELEMENT seccion_periodico (#PCDATA)>
+    <!ELEMENT articulo (#PCDATA)>
+    <!ELEMENT contenido (#PCDATA)>
+
+    <!ATTLIST periodico id ID #REQUIRED>
+    <!ATTLIST periodico tipo_clase (nacionales | internacionales) #REQUIRED>
+    <!ATTLIST periodico fecha_publicacion NMTOKENS #REQUIRED>
+    <!ATTLIST seccion_periodico tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
+    <!ATTLIST articulo autor NMTOKENS #REQUIRED>
+    <!ATTLIST contenido enlace_info_periodico CDATA #REQUIRED>
+]>
+
+<!--BIBLIOTECA-->
+<biblioteca>
+
+    <!--LIBRO-->
+        <libro id="L0000" tipo_clase="novela" numero_paginas_libro="100">
+            <titulo_libro>Libro</titulo_libro>
+            <indice_contenido>Indice</indice_contenido>
+            <sinopsis>Sinopsis</sinopsis>
+            <capitulo numero_paginas_cap="10">
+                <titulo_cap>Cap 1</titulo_cap>
+                <contenido_libro enlace="enlace">Contenido</contenido_libro>
+            </capitulo>
+        </libro>
+
+        <revista id="R0000" tipo_clase="informatica" numero_paginas_revista="20">
+            <titulo_revista>Revista</titulo_revista>
+            <numero_revista>001</numero_revista>
+            <indice_revista>Indice</indice_revista>
+            <seccion_revista numero_paginas_seccion="10">
+                <contenido_seccion enlace_info_revista="enlace">Contenido</contenido_seccion>
+            </seccion_revista>
+            <seccion_revista numero_paginas_seccion="10">
+                <contenido_seccion enlace_info_revista="enlace">Contenido</contenido_seccion>
+            </seccion_revista>
+        </revista>
+
+        <periodico id="P0000" tipo_clase="nacionales" fecha_publicacion="14-12-2002">
+            <indice_periodico>Indice</indice_periodico>
+            <seccion_periodico tipo_seccion="economica">
+                <articulo autor="Pablo">Articulo 1</articulo>
+                <articulo autor="Felix">Articulo 2</articulo>
+            </seccion_periodico>
+            <contenido enlace_info_periodico="enlace">Contenido</contenido>
+        </periodico>
+
+</biblioteca>
