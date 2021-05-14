@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE biblioteca[
-    <!ELEMENT biblioteca (libro, revista, periodico)>
+
+    <!ELEMENT biblioteca (libro+, revista+, periodico+)>
 
     <!--Parte del libro-->
     <!ELEMENT libro (titulo_libro, indice_contenido, sinopsis, capitulo)>
     <!ELEMENT titulo_libro (#PCDATA)>
     <!ELEMENT indice_contenido (#PCDATA)>
     <!ELEMENT sinopsis (#PCDATA)>
-    <!ELEMENT capitulo (#PCDATA)>
+    <!ELEMENT capitulo (titulo_cap, contenido_libro)>
     <!ELEMENT contenido_libro (#PCDATA)>
     <!ELEMENT titulo_cap (#PCDATA)>
 
@@ -18,11 +19,11 @@
     <!ATTLIST contenido_libro enlace CDATA #REQUIRED>
 
     <!--Parte de la revista-->
-    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, seccion)>
+    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, seccion_revista+)>
     <!ELEMENT titulo_revista (#PCDATA)>
     <!ELEMENT numero_revista (#PCDATA)>
     <!ELEMENT indice_revista (#PCDATA)>
-    <!ELEMENT seccion_revista (#PCDATA)>
+    <!ELEMENT seccion_revista (contenido_seccion)>
     <!ELEMENT contenido_seccion (#PCDATA)>
     
     <!ATTLIST revista id ID #REQUIRED>
@@ -32,7 +33,7 @@
     <!ATTLIST contenido_seccion enlace_info_revista CDATA #REQUIRED>
 
     <!--Parte del periodico-->
-    <!ELEMENT periodico (indice_periodico, seccion_periodico, contenido)>
+    <!ELEMENT periodico (indice_periodico, seccion_periodico, articulo+, contenido)>
     <!ELEMENT indice_periodico (#PCDATA)>
     <!ELEMENT seccion_periodico (#PCDATA)>
     <!ELEMENT articulo (#PCDATA)>

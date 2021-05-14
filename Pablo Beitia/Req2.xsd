@@ -15,7 +15,7 @@
                                     <xs:sequence>
                                         <xs:element name="titulo_cap" type="xs:string"/>
                                         <xs:element name="contenido_cap">
-                                            <xs:complexType>
+                                            <xs:complexType mixed="true">
                                                 <xs:attribute name="enlace" type="xs:string"/>
                                             </xs:complexType>
                                         </xs:element>
@@ -28,7 +28,7 @@
                         <xs:attribute name="id" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:pattern value="[L]\d\d\d\d"></xs:pattern>
+                                    <xs:pattern value="[L][0-9]{4}"></xs:pattern>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
@@ -43,7 +43,7 @@
                             </xs:simpleType>
                         </xs:attribute>
             
-                        <xs:attribute name="numero_paginas_libro" type="xs:integer" use="optional"/>
+                        <xs:attribute name="numero_paginas_libro" type="xs:integer" use="required"/>
             
                     </xs:complexType>
                 </xs:element>
@@ -60,7 +60,7 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="contenido_seccion">
-                                            <xs:complexType>
+                                            <xs:complexType mixed="true">
                                                 <xs:attribute name="enlace" type="xs:string"/>
                                             </xs:complexType>
                                         </xs:element>
@@ -73,7 +73,7 @@
                         <xs:attribute name="id" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:pattern value="[R]\d\d\d\d"></xs:pattern>
+                                    <xs:pattern value="[R][0-9]{4}"></xs:pattern>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
@@ -89,7 +89,7 @@
                             </xs:simpleType>
                         </xs:attribute>
             
-                        <xs:attribute name="numero_paginas_revista" type="xs:integer" use="optional"/>
+                        <xs:attribute name="numero_paginas_revista" type="xs:integer" use="required"/>
                     </xs:complexType>
                 </xs:element>
             <!--____________________________________________________________________________________________-->
@@ -122,7 +122,7 @@
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="contenido_periodico">
-                                <xs:complexType>
+                                <xs:complexType  mixed="true">
                                     <xs:attribute name="enlace" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
@@ -131,7 +131,7 @@
                         <xs:attribute name="id" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:pattern value="[P]\d\d\d\d"></xs:pattern>
+                                    <xs:pattern value="[P][0-9]{4}"></xs:pattern>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
